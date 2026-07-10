@@ -17,7 +17,6 @@ fun FilmItem(film: FilmModel) {
             .padding(8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Картинка
         AsyncImage(
             model = film.posterUrl,
             contentDescription = film.name,
@@ -26,7 +25,6 @@ fun FilmItem(film: FilmModel) {
 
         Spacer(modifier = Modifier.width(16.dp))
 
-        // Название
         Text(text = film.name)
     }
 }

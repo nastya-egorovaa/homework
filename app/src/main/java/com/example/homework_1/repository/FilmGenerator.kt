@@ -64,15 +64,16 @@ class FilmGenerator {
        )
 
     fun generate(count: Int): List<FilmModel> {
-        return (1..count).map { index ->
-            val randomFilm = filmDatabase.random() // Берём случайный фильм из списка
-            FilmModel(
-                id = index.toString(), // Присваиваем новый id
-                posterUrl = randomFilm.posterUrl,
-                name = randomFilm.name,
-                description = randomFilm.description,
-                releaseDate = randomFilm.releaseDate
-            )
-        }
+
+        return filmDatabase.shuffled().take(count)
+            .mapIndexed { index, film ->
+                FilmModel(
+                    id = (index + 1).toString(),
+                    posterUrl = film.posterUrl,
+                    name = film.name,
+                    description = film.description,
+                    releaseDate = film.releaseDate
+                )
+            }
     }
 }

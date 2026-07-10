@@ -37,7 +37,6 @@ fun FirstScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Поле ввода
         OutlinedTextField(
             value = userInput,
             onValueChange = { newText ->
