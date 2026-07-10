@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -45,4 +46,6 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.coil.network)
     implementation(libs.bundles.compose.core)
+    implementation(libs.x.navigation)
+    implementation(libs.serialization.json)
 }
